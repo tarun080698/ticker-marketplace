@@ -1,92 +1,200 @@
 [
   {
     "name": "Taylor Swift | The Eras Tour",
-    "description": "Experience Taylor Swift's record-breaking Eras Tour live!",
+    "description": "Experience Taylor Swift's record-breaking Eras Tour live! Relive the magic of her journey through multiple iconic albums, featuring breathtaking visuals, mesmerizing performances, and a once-in-a-lifetime experience that has captivated fans worldwide.",
     "price": 499.99,
     "totalTickets": 100,
     "location": "MetLife Stadium, New Jersey",
-    "eventDate": 1723845600000,
+    "eventDate": 1732536000000,
     "userId": "user_2bFMHkGxZPWVVyJ5QEJQxfsCkxB"
   },
   {
     "name": "NBA Finals 2024 - Game 1",
-    "description": "Witness the opening game of the NBA Finals!",
+    "description": "Witness the opening game of the NBA Finals and be part of basketball history! Feel the excitement as the top teams clash in this highly anticipated championship, showcasing the best players, thrilling moments, and unmatched energy in the heart of New York.",
     "price": 899.99,
     "totalTickets": 50,
     "location": "Madison Square Garden, New York",
-    "eventDate": 1717891200000,
+    "eventDate": 1745090104449,
     "userId": "user_2bFMHkGxZPWVVyJ5QEJQxfsCkxB"
   },
   {
     "name": "Hamilton - Broadway",
-    "description": "Don't miss the award-winning musical phenomenon!",
+    "description": "Don't miss the award-winning musical phenomenon that has redefined Broadway! Follow the compelling story of Alexander Hamilton through a revolutionary blend of hip-hop, jazz, and traditional theater, performed by an electrifying cast.",
     "price": 299.99,
     "totalTickets": 75,
     "location": "Richard Rodgers Theatre, New York",
-    "eventDate": 1721788200000,
+    "eventDate": 1743534904449,
     "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
   },
   {
     "name": "Coldplay World Tour",
-    "description": "Join Coldplay for an unforgettable night of music!",
+    "description": "Join Coldplay for an unforgettable night of music as they perform their greatest hits and new tracks in a stunningly immersive show. Expect dazzling light displays, energetic performances, and a connection with the crowd that only Coldplay can deliver.",
     "price": 150.0,
     "totalTickets": 200,
     "location": "Wembley Stadium, London",
-    "eventDate": 1726012800000,
+    "eventDate": 1732734904449,
     "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
   },
   {
     "name": "Comic Con 2024",
-    "description": "The ultimate pop culture convention!",
+    "description": "The ultimate pop culture convention where fans of comics, movies, TV shows, and gaming unite! Meet your favorite stars, attend exclusive panels, dress up in cosplay, and explore a world of collectibles, creativity, and community.",
     "price": 85.0,
     "totalTickets": 1000,
     "location": "Javits Center, New York",
-    "eventDate": 1728172800000,
+    "eventDate": 1731698104449,
     "userId": "user_2dOPKmMyZRXXazL7SGLSzhsEmzD"
   },
   {
     "name": "Ed Sheeran Mathematics Tour",
-    "description": "An intimate evening with Ed Sheeran performing his greatest hits",
+    "description": "An intimate evening with Ed Sheeran performing his greatest hits, including chart-topping singles and fan favorites. Enjoy his soulful melodies, heartwarming lyrics, and captivating live performance in a truly unforgettable setting.",
     "price": 125.0,
     "totalTickets": 150,
     "location": "O2 Arena, London",
-    "eventDate": 1729382400000,
+    "eventDate": 1731611704449,
     "userId": "user_2eRTLnPxYQWWbzM8THMTaisFnzE"
   },
   {
     "name": "Premier League: Arsenal vs Manchester United",
-    "description": "A classic Premier League rivalry match at the Emirates",
+    "description": "A classic Premier League rivalry match at the Emirates! Feel the passion and intensity as two of England's top football teams go head-to-head in an unmissable showdown filled with drama, skill, and unwavering fan energy.",
     "price": 199.99,
     "totalTickets": 60,
     "location": "Emirates Stadium, London",
-    "eventDate": 1722393600000,
+    "eventDate": 1732536000000,
     "userId": "user_2fQUMpNzXSVVczN9UINUbjsGozF"
   },
   {
     "name": "Adele: Weekend with Adele",
-    "description": "Adele's spectacular Las Vegas residency show",
+    "description": "Adele's spectacular Las Vegas residency show offers an exclusive opportunity to witness her soul-stirring voice and timeless hits in an intimate and luxurious setting. Experience an evening of musical excellence and raw emotion.",
     "price": 450.0,
     "totalTickets": 80,
     "location": "Caesars Palace, Las Vegas",
-    "eventDate": 1724985600000,
+    "eventDate": 1746645304449,
     "userId": "user_2gPVNqOyYTWWdzO0VJOVcktHpzG"
   },
   {
     "name": "Wimbledon 2024 - Men's Final",
-    "description": "The culmination of the world's most prestigious tennis tournament",
+    "description": "The culmination of the world's most prestigious tennis tournament. Witness the ultimate battle for glory on the iconic Centre Court as the world's best players compete for the coveted Wimbledon trophy.",
     "price": 750.0,
     "totalTickets": 40,
     "location": "Centre Court, All England Club, London",
-    "eventDate": 1720578600000,
+    "eventDate": 1736277304449,
     "userId": "user_2hQWOrPzZUXXezP1WKPWdluIqzH"
   },
   {
     "name": "Harry Potter and the Cursed Child",
-    "description": "The eighth story in the Harry Potter series comes to life on stage",
+    "description": "The eighth story in the Harry Potter series comes to life on stage in a spellbinding theatrical experience. Dive into the wizarding world as Harry and his family face new challenges, blending magic, mystery, and emotion in an unforgettable performance.",
     "price": 175.0,
     "totalTickets": 100,
     "location": "Palace Theatre, London",
-    "eventDate": 1727222400000,
+    "eventDate": 1732821304449,
     "userId": "user_2iRXPsQAaVYYfAQ2XLQXemvJrzI"
+  },
+  {
+    "name": "Beyoncé - Renaissance World Tour",
+    "description": "Immerse yourself in an electrifying celebration of Beyoncé’s chart-topping hits and groundbreaking artistry. The Renaissance World Tour brings a dazzling spectacle of music, fashion, and powerful performances that will leave fans in awe.",
+    "price": 499.99,
+    "totalTickets": 120,
+    "location": "SoFi Stadium, Los Angeles",
+    "eventDate": 1739203200000,
+    "userId": "user_3aFNMkJtZQWVVpJ7QEJQyfsXkAb"
+  },
+  {
+    "name": "Drake - It's All a Blur Tour",
+    "description": "Drake's highly anticipated 'It's All a Blur Tour' showcases his massive hits and unforgettable collaborations. With state-of-the-art production and electrifying stage presence, this is a must-attend event for any hip-hop fan.",
+    "price": 399.99,
+    "totalTickets": 200,
+    "location": "United Center, Chicago",
+    "eventDate": 1740230400000,
+    "userId": "user_3aFNMkJtZQWVVpJ7QEJQyfsXkAb"
+  },
+  {
+    "name": "Billie Eilish - Happier Than Ever Tour",
+    "description": "Experience Billie Eilish’s captivating vocals and magnetic stage presence in her 'Happier Than Ever Tour.' This soulful and deeply emotional performance is an intimate journey through her chart-topping tracks and fan favorites.",
+    "price": 299.99,
+    "totalTickets": 150,
+    "location": "Barclays Center, Brooklyn, New York",
+    "eventDate": 1743105600000,
+    "userId": "user_3bGNMkJtZPWVZpJ8QEJQyftXkBa"
+  },
+  {
+    "name": "Post Malone - Twelve Carat Tour",
+    "description": "Join Post Malone for a night of genre-bending hits, high-energy performances, and heartfelt moments as he performs tracks from his iconic albums and recent releases on the 'Twelve Carat Tour.'",
+    "price": 350.0,
+    "totalTickets": 175,
+    "location": "T-Mobile Arena, Las Vegas",
+    "eventDate": 1740686400000,
+    "userId": "user_3bGNMkJtZPWVZpJ8QEJQyftXkBa"
+  },
+  {
+    "name": "Bruno Mars - An Evening With Bruno Mars",
+    "description": "A night of pure funk, soul, and pop hits with Bruno Mars, as he delivers his signature smooth vocals and impeccable dance moves. Experience an unforgettable blend of talent and showmanship.",
+    "price": 425.0,
+    "totalTickets": 100,
+    "location": "The Theater at MGM, Las Vegas",
+    "eventDate": 1743192000000,
+    "userId": "user_3cHOMkKtZQWVVpK9QEJQzftYkCc"
+  },
+  {
+    "name": "The Weeknd - After Hours Til Dawn Tour",
+    "description": "Step into The Weeknd's hauntingly beautiful world with his 'After Hours Til Dawn Tour.' This immersive performance features jaw-dropping visuals and electrifying renditions of his biggest hits.",
+    "price": 475.0,
+    "totalTickets": 180,
+    "location": "NRG Stadium, Houston",
+    "eventDate": 1738972800000,
+    "userId": "user_3cHOMkKtZQWVVpK9QEJQzftYkCc"
+  },
+  {
+    "name": "Imagine Dragons - Mercury World Tour",
+    "description": "Don't miss Imagine Dragons as they bring their powerhouse energy and genre-defying hits to the 'Mercury World Tour,' delivering a live music experience like no other.",
+    "price": 275.0,
+    "totalTickets": 250,
+    "location": "Gillette Stadium, Foxborough",
+    "eventDate": 1743451200000,
+    "userId": "user_3dIOMkLtZQWVVqK0QEJQzfsZkDd"
+  },
+  {
+    "name": "Ariana Grande - Sweetener World Tour",
+    "description": "Ariana Grande's 'Sweetener World Tour' combines breathtaking vocals, iconic fashion, and showstopping choreography, making it a perfect celebration of her acclaimed music career.",
+    "price": 325.0,
+    "totalTickets": 140,
+    "location": "Staples Center, Los Angeles",
+    "eventDate": 1739145600000,
+    "userId": "user_3dIOMkLtZQWVVqK0QEJQzfsZkDd"
+  },
+  {
+    "name": "Foo Fighters - Concrete and Gold Tour",
+    "description": "Join Foo Fighters for an unforgettable rock concert featuring legendary tracks and their signature raw energy. This is a must-see event for rock fans around the globe.",
+    "price": 250.0,
+    "totalTickets": 160,
+    "location": "Red Rocks Amphitheatre, Colorado",
+    "eventDate": 1739203200000,
+    "userId": "user_3eJOMkMtZPWVVqK1QEJQzftYkEe"
+  },
+  {
+    "name": "Dua Lipa - Future Nostalgia Tour",
+    "description": "Experience Dua Lipa's chart-topping hits and electrifying stage presence in her 'Future Nostalgia Tour.' From pop anthems to disco grooves, this event will have you dancing all night long.",
+    "price": 300.0,
+    "totalTickets": 130,
+    "location": "Madison Square Garden, New York",
+    "eventDate": 1743447600000,
+    "userId": "user_3eJOMkMtZPWVVqK1QEJQzftYkEe"
+  },
+  {
+    "name": "Elton John - Farewell Yellow Brick Road Tour",
+    "description": "Say goodbye to a legend as Elton John embarks on his final tour, performing timeless classics in a grand and emotional celebration of his iconic music career.",
+    "price": 500.0,
+    "totalTickets": 110,
+    "location": "Dodger Stadium, Los Angeles",
+    "eventDate": 1739088000000,
+    "userId": "user_3fKOMkNtZQWVVqK2QEJQzfsYkFf"
+  },
+  {
+    "name": "Kendrick Lamar - The Big Steppers Tour",
+    "description": "Kendrick Lamar delivers a powerful and immersive performance in 'The Big Steppers Tour,' showcasing his unparalleled lyricism and captivating stage presence.",
+    "price": 450.0,
+    "totalTickets": 100,
+    "location": "Madison Square Garden, New York",
+    "eventDate": 1739116800000,
+    "userId": "user_3fKOMkNtZQWVVqK2QEJQzfsYkFf"
   }
 ]
