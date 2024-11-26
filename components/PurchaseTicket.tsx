@@ -56,7 +56,7 @@ function PurchaseTicket({ eventId }: { eventId: Id<"events"> }) {
   return (
     <div className="bg-white p-4 rounded-xl shadow-xl border-2 border-yellow-400">
       <div className="space-y-4">
-        <div className="bg-yellow-50 rounded-lg p-3 border border-yellow-100 shadow-lg">
+        <div className="bg-yellow-50/70 rounded-lg p-3 border border-yellow-100 shadow-lg">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-yellow-200 flex items-center justify-center">
@@ -66,7 +66,7 @@ function PurchaseTicket({ eventId }: { eventId: Id<"events"> }) {
                 <div className="font-heading font-semibold text-xl">
                   Ticket Reserved
                 </div>
-                <div className="text-sm text-yellow-400">
+                <div className="text-sm text-yellow-500">
                   Expires in {timeRemaining}
                 </div>
               </div>
@@ -74,7 +74,7 @@ function PurchaseTicket({ eventId }: { eventId: Id<"events"> }) {
 
             <div className="text-sm font-light leading-relaxed">
               {" "}
-              A ticket has been reserved for you. Compelete your purchase before
+              A ticket has been reserved for you. Complete your purchase before
               the timer expires to secure you spot at this event.
             </div>
           </div>
@@ -83,7 +83,7 @@ function PurchaseTicket({ eventId }: { eventId: Id<"events"> }) {
         <button
           onClick={handlePurchase}
           disabled={isExpired || isLoading}
-          className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-500 px-8 py-4 rounded-lg font-bold font-heading shadow-md hover:from-yellow-500 hover:to-yellow-400 transform hover:scale-105 transition-all duration-200 disabled:text-gray-600 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed cursor-pointer disabled:hover:scale-100 text-lg"
+          className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold font-heading shadow-md hover:from-yellow-500 hover:to-yellow-400 transform hover:scale-105 transition-all duration-200 disabled:text-gray-600 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed cursor-pointer disabled:hover:scale-100 text-lg"
         >
           {isLoading ? "Redirecting to checkout..." : "Complete your purchase"}
         </button>

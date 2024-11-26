@@ -34,7 +34,7 @@ function ReleaseTicket({
     <button
       onClick={handleRelease}
       disabled={isReleasing}
-      className="w-full bg-gradient-to-r from-pink-400 to-pink-500 text-blue-500 px-8 py-4 rounded-lg font-bold font-heading shadow-md hover:from-pink-500 hover:to-pink-400 transform hover:scale-105 transition-all duration-200 disabled:text-gray-600 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed cursor-pointer disabled:hover:scale-100 text-lg"
+      className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-400 to-pink-500 text-white px-8 py-4 rounded-lg font-bold font-heading shadow-md hover:from-pink-500 hover:to-pink-400 transform hover:scale-105 transition-all duration-200 disabled:text-gray-600 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed cursor-pointer disabled:hover:scale-100 text-lg"
     >
       <XCircle className="w-4 h-4" />
       {isReleasing ? "Releasing..." : "Release Ticket Offer"}

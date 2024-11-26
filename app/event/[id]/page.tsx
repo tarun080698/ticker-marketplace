@@ -37,7 +37,7 @@ function EventPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {imageUrl && (
             <div className="aspect-[21/9] relative w-full">
@@ -56,16 +56,18 @@ function EventPage() {
               {/* Left Column - Event Details */}
               <div className="space-y-8">
                 <div>
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                  <h1 className="text-4xl font-bold font-heading text-blue-500 mb-4">
                     {event.name}
                   </h1>
-                  <p className="text-lg text-gray-600">{event.description}</p>
+                  <p className="text-lg text-blue-500 font-body">
+                    {event.description}
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <div className="flex items-center text-gray-600 mb-1">
-                      <CalendarDays className="w-5 h-5 mr-2 text-blue-600" />
+                    <div className="flex items-center text-blue-500 mb-1">
+                      <CalendarDays className="w-5 h-5 mr-2 text-blue-500" />
                       <span className="text-sm font-medium">Date</span>
                     </div>
                     <p className="text-gray-900">
@@ -74,24 +76,24 @@ function EventPage() {
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <div className="flex items-center text-gray-600 mb-1">
-                      <MapPin className="w-5 h-5 mr-2 text-blue-600" />
+                    <div className="flex items-center text-blue-500 mb-1">
+                      <MapPin className="w-5 h-5 mr-2 text-blue-500" />
                       <span className="text-sm font-medium">Location</span>
                     </div>
                     <p className="text-gray-900">{event.location}</p>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <div className="flex items-center text-gray-600 mb-1">
-                      <Ticket className="w-5 h-5 mr-2 text-blue-600" />
+                    <div className="flex items-center text-blue-500 mb-1">
+                      <Ticket className="w-5 h-5 mr-2 text-blue-500" />
                       <span className="text-sm font-medium">Price</span>
                     </div>
                     <p className="text-gray-900">£{event.price.toFixed(2)}</p>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                    <div className="flex items-center text-gray-600 mb-1">
-                      <Users className="w-5 h-5 mr-2 text-blue-600" />
+                    <div className="flex items-center text-blue-500 mb-1">
+                      <Users className="w-5 h-5 mr-2 text-blue-500" />
                       <span className="text-sm font-medium">Availability</span>
                     </div>
                     <p className="text-gray-900">
@@ -103,10 +105,10 @@ function EventPage() {
 
                 {/* Additional Event Information */}
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                  <h3 className="text-lg font-semibold text-yellow-500 mb-2">
                     Event Information
                   </h3>
-                  <ul className="space-y-2 text-blue-700">
+                  <ul className="space-y-2 text-yellow-500">
                     <li>• Please arrive 30 minutes before the event starts</li>
                     <li>• Tickets are non-refundable</li>
                     <li>• Age restriction: 18+</li>
@@ -117,7 +119,10 @@ function EventPage() {
               {/* Right Column - Ticket Purchase Card */}
               <div>
                 <div className="sticky top-8 space-y-4">
-                  <EventCard eventId={params.id as Id<"events">} />
+                  <EventCard
+                    eventId={params.id as Id<"events">}
+                    clickable={false}
+                  />
 
                   {user ? (
                     <JoinQueue

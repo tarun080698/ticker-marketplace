@@ -24,7 +24,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import PurchaseTicket from "./PurchaseTicket";
 
-function EventCard({ eventId }: { eventId: Id<"events"> }) {
+function EventCard({
+  eventId,
+  clickable = true,
+}: {
+  eventId: Id<"events">;
+  clickable: boolean;
+}) {
   const { user } = useUser();
   const router = useRouter();
 
@@ -150,8 +156,8 @@ function EventCard({ eventId }: { eventId: Id<"events"> }) {
 
   return (
     <div
-      onClick={() => router.push(`/event/${eventId}`)}
-      className={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 border border-yellow-200 hover:border-yellow-400 cursor-pointer overflow-hidden relative ${isPastEvent ? "opacity-80 hover:opacity-100" : ""}`}
+      onClick={() => clickable && router.push(`/event/${eventId}`)}
+      className={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 border border-yellow-200 hover:border-yellow-400 ${clickable && "cursor-pointer"} overflow-hidden relative ${isPastEvent ? "opacity-80 hover:opacity-100" : ""}`}
     >
       {/* Image banner */}
       {imageUrl && (
