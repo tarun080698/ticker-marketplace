@@ -198,9 +198,9 @@ function EventCard({
             {event?.name}
           </div>{" "}
           <div
-            className={`inline-flex items-center justify-center font-heading px-2 py-1 font-semibold rounded-lg ${isPastEvent ? "bg-gray-100/70 text-gray-500" : "bg-green-100/70 text-green-500"}`}
+            className={`inline-flex items-center justify-center font-heading px-2 py-1 font-bold rounded-2xl text-lg ${isPastEvent ? "bg-gray-100/70 text-gray-500" : "bg-green-100/90 text-green-500"}`}
           >
-            <DollarSign className="w-4 h-4" />
+            <DollarSign className="w-4 h-4 font-bold" />
             {event?.price.toFixed(2)}
           </div>
         </div>
@@ -217,33 +217,36 @@ function EventCard({
         <div
           className={`inline-flex items-center justify-center gap-1 font-body px-2 py-1 font-semibold`}
         >
-          <Calendar className="w-4 h-4" /> {event?.eventDate}
+          <Calendar className="w-4 h-4" />{" "}
+          <span>
+            {new Date(event?.eventDate).toLocaleDateString()}{" "}
+            {isPastEvent && "(Ended)"}
+          </span>
         </div>
         <div
-          className={`flex items-start md:items-center flex-col lg:flex-row justify-start gap-1 font-body px-2 py-1 font-semibold`}
+          className={`inline-flex items-center justify-center gap-1 font-body px-2 py-1 font-semibold`}
         >
-          <div className="flex items-center justify-start gap-1 font-body font-semibold">
-            <Ticket className="w-4 h-4" />{" "}
-            {availability?.totalTickets - availability?.purchasedCount}/
-            {event?.totalTickets} available{" "}
-          </div>
-          <div className="flex items-center justify-start gap-1 font-body">
-            {!isPastEvent && availability?.activeOffers > 0 && (
-              <span className="inline-flex items-center justify-start gap-1 px-2 py-1 bg-yellow-200 text-black lg:ml-2 font-semibold rounded-lg">
-                <ClockAlert className="w-4 h-4 animate-pulse duration-500 text-pink-500" />
-                {availability?.activeOffers}{" "}
-                {availability?.activeOffers === 1 ? "person" : "people"} trying
-                to buy
-              </span>
-            )}
-          </div>
+          <Ticket className="w-4 h-4" />{" "}
+          {availability?.totalTickets - availability?.purchasedCount}/
+          {event?.totalTickets} available{" "}
         </div>
+
+        {!isPastEvent && availability?.activeOffers > 0 && (
+          <div className="w-full bg-yellow-200 text-pink-500 inline-flex items-center justify-start gap-1 font-body px-2 animate-pulse duration-700 py-1 font-bold rounded-lg">
+            <ClockAlert className="w-4 h-4  text-pink-500" />
+            {availability?.activeOffers}{" "}
+            {availability?.activeOffers === 1 ? "person" : "people"} trying to
+            buy
+          </div>
+        )}
 
         {/* event description */}
 
-        <div className="line-clamp-3 font-body text-sm overflow-hidden text-ellipsis">
-          {event?.description}
-        </div>
+        {clickable && (
+          <div className="line-clamp-3 font-body text-sm overflow-hidden text-ellipsis">
+            {event?.description}
+          </div>
+        )}
 
         {/* edit event */}
         {renderTicketStatus()}

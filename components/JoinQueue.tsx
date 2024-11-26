@@ -94,7 +94,7 @@ function JoinQueue({
             <button
               onClick={handleJoinQueue}
               disabled={isPastEvent || isEventOwner}
-              className="w-full bg-pink-400 text-blue-200 px-6 py-3 rounded-lg font-medium hover:bg-pink-500 hover:text-blue-500 transition-colors duration-200 shadow-md flex items-center justify-center disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-pink-400 to-pink-500 text-white px-8 py-4 rounded-lg font-bold font-heading shadow-md hover:from-pink-500 hover:to-pink-400 transform hover:scale-105 transition-all duration-200 disabled:text-gray-600 disabled:from-gray-300 disabled:to-gray-300 disabled:cursor-not-allowed cursor-pointer disabled:hover:scale-100 text-lg"
             >
               Buy Ticket
             </button>

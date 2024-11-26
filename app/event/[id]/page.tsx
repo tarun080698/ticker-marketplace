@@ -20,6 +20,8 @@ function EventPage() {
     eventId: params.id as Id<"events">,
   });
 
+  console.log({ user });
+
   const availability = useQuery(api.events.getEventAvailability, {
     eventId: params.id as Id<"events">,
   });

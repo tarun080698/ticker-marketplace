@@ -66,7 +66,7 @@ function PurchaseTicket({ eventId }: { eventId: Id<"events"> }) {
                 <div className="font-heading font-semibold text-xl">
                   Ticket Reserved
                 </div>
-                <div className="text-sm text-yellow-500">
+                <div className="text-base text-yellow-500 animate-bounce duration-1000">
                   Expires in {timeRemaining}
                 </div>
               </div>
