@@ -8,7 +8,7 @@ import EventCard from "./EventCard";
 
 function EventList() {
   const events = useQuery(api.events.get);
-  console.log({ events });
+  // console.log({ events });
 
   if (!events) {
     return (
@@ -25,7 +25,7 @@ function EventList() {
     .filter((event) => event.eventDate <= Date.now())
     .sort((a, b) => a.eventDate - b.eventDate);
   return (
-    <div className="container mx-auto">
+    <div className="max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-8 bg-pink-50 p-2 rounded-md">
         <div>
           <div className="tracking-wide text-3xl font-semibold text-blue-500 font-heading">
@@ -48,9 +48,9 @@ function EventList() {
       {/* upcoming events grid */}
 
       {upcomingEvents.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {upcomingEvents.map((event) => (
-            <EventCard key={event._id} eventId={event._id} />
+            <EventCard key={event._id} eventId={event._id} clickable={true} />
           ))}
         </div>
       ) : (

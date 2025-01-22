@@ -1,7 +1,6 @@
 "use server";
 
 import { api } from "@/convex/_generated/api";
-import { stripe } from "@/lib/stripe";
 import { auth } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 

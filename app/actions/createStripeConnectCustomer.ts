@@ -5,11 +5,11 @@ import { stripe } from "@/lib/stripe";
 import { auth } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 
-if (!process.env.NEXT_PULIC_CONVEX_URL) {
+if (!process.env.NEXT_PUBLIC_CONVEX_URL) {
   throw new Error("CONVEX PUBLIC URL is not set");
 }
 
-const convex = new ConvexHttpClient(process.env.NEXT_PULIC_CONVEX_URL);
+const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 
 export async function createStripeConnectCustomer() {
   const { userId } = await auth();

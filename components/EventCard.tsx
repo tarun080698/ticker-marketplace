@@ -32,6 +32,7 @@ function EventCard({
   clickable: boolean;
 }) {
   const { user } = useUser();
+  console.log({ user });
   const router = useRouter();
 
   const event = useQuery(api.events.getEventById, { eventId });
@@ -50,7 +51,7 @@ function EventCard({
     useStorageUrl(event?.imageStorageId) ??
     "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2023/03/31183929/Ww3Mdl8Cft88XSXhja8nLENrIVoxFEKqDaHwYPVb-972x597.jpeg";
 
-  console.log(event);
+  // console.log(event);
 
   const isPastEvent = event?.eventDate < Date.now();
   const isEventOwner = user?.id === event?.userId;

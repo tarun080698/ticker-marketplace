@@ -39,7 +39,7 @@ function EventPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {imageUrl && (
             <div className="aspect-[21/9] relative w-full">
@@ -47,7 +47,7 @@ function EventPage() {
                 src={imageUrl}
                 alt={event.name}
                 fill
-                className="object-cover"
+                className="object-fill"
                 priority
               />
             </div>
