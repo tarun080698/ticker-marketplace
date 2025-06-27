@@ -1,6 +1,6 @@
 "use client";
 import { api } from "@/convex/_generated/api";
-import { Id } from "@/convex/_generated/dataModel";
+import { Id, Doc } from "@/convex/_generated/dataModel";
 import { useStorageUrl } from "@/lib/utils";
 import { useUser } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
@@ -13,9 +13,7 @@ import {
   Crown,
   DollarSign,
   LoaderCircle,
-  LoaderPinwheel,
   MapPin,
-  StarIcon,
   Ticket,
   XCircle,
 } from "lucide-react";
@@ -35,13 +33,19 @@ function EventCard({
   console.log({ user });
   const router = useRouter();
 
-  const event = useQuery(api.events.getEventById, { eventId });
+  const event: Doc<"events"> | null | undefined = useQuery(
+    api.events.getEventById,
+    { eventId }
+  );
   const availability = useQuery(api.events.getEventAvailability, { eventId });
 
-  const userTicket = useQuery(api.tickets.getUserTickerForEvent, {
-    eventId,
-    userId: user?.id ?? "",
-  });
+  const userTicket: Doc<"tickets"> | null | undefined = useQuery(
+    api.tickets.getUserTickerForEvent,
+    {
+      eventId,
+      userId: user?.id ?? "",
+    }
+  );
   const queuePosition = useQuery(api.waitingList.getQueuePosition, {
     eventId,
     userId: user?.id ?? "",
@@ -53,13 +57,15 @@ function EventCard({
 
   // console.log(event);
 
-  const isPastEvent = event?.eventDate < Date.now();
+  const isPastEvent = event?.eventDate ? event.eventDate < Date.now() : false;
   const isEventOwner = user?.id === event?.userId;
 
   const renderQueueposition = () => {
-    if (queuePosition || queuePosition?.status !== "waiting") return null;
+    if (!queuePosition || queuePosition?.status !== "waiting") return null;
 
-    if (availability?.purchasedCount >= availability?.totalTickets) {
+    if (
+      (availability?.purchasedCount ?? 0) >= (availability?.totalTickets ?? 0)
+    ) {
       return (
         <div className="flex items-center justify-between gap-1 px-2 py-1 bg-pink-100/60 rounded-lg border border-pink-500 text-pink-500">
           <Ticket className="w-5 h-5" />
@@ -158,7 +164,7 @@ function EventCard({
   return (
     <div
       onClick={() => clickable && router.push(`/event/${eventId}`)}
-      className={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 border border-yellow-200 hover:border-yellow-400 ${clickable && "cursor-pointer"} overflow-hidden relative ${isPastEvent ? "opacity-80 hover:opacity-100" : ""}`}
+      className={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-300 hover:border-yellow-400 ${clickable && "cursor-pointer"} overflow-hidden relative ${isPastEvent ? "opacity-80" : ""}`}
     >
       {/* Image banner */}
       {imageUrl && (
@@ -185,7 +191,8 @@ function EventCard({
             Your Event
           </span>
         )}
-        {availability?.purchasedCount >= availability?.totalTickets && (
+        {(availability?.purchasedCount ?? 0) >=
+          (availability?.totalTickets ?? 0) && (
           <span className="inline-flex items-center justify-center gap-1 font-heading px-2 py-1 text-sm bg-pink-100/70 text-pink-500 font-semibold rounded-lg mt-2">
             <BadgeCheck className="w-4 h-4" /> Sold Out
           </span>
@@ -194,12 +201,12 @@ function EventCard({
 
       {/* event name and price */}
       <div className={`p-2 lg:p-3 ${imageUrl ? "relative" : ""}`}>
-        <div className="flex items-center justify-between gap-2">
-          <div className="w-full font-heading font-bold md:text-lg lg:text-xl ">
+        <div className="flex items-start justify-between gap-5">
+          <div className="w-full font-heading font-bold md:text-lg lg:text-xl">
             {event?.name}
           </div>{" "}
           <div
-            className={`inline-flex items-center justify-center font-heading px-2 py-1 font-bold rounded-2xl text-lg ${isPastEvent ? "bg-gray-100/70 text-gray-500" : "bg-green-100/90 text-green-500"}`}
+            className={`inline-flex items-center justify-center font-heading px-3 py-1 font-bold rounded-2xl text-lg ${isPastEvent ? "bg-gray-100/70 text-gray-500" : "bg-green-100/90 text-green-500"}`}
           >
             <DollarSign className="w-4 h-4 font-bold" />
             {event?.price.toFixed(2)}
@@ -220,7 +227,9 @@ function EventCard({
         >
           <Calendar className="w-4 h-4" />{" "}
           <span>
-            {new Date(event?.eventDate).toLocaleDateString()}{" "}
+            {event?.eventDate
+              ? new Date(event.eventDate).toLocaleDateString()
+              : "TBD"}{" "}
             {isPastEvent && "(Ended)"}
           </span>
         </div>
@@ -228,11 +237,12 @@ function EventCard({
           className={`inline-flex items-center justify-center gap-1 font-body px-2 py-1 font-semibold`}
         >
           <Ticket className="w-4 h-4" />{" "}
-          {availability?.totalTickets - availability?.purchasedCount}/
-          {event?.totalTickets} available{" "}
+          {(availability?.totalTickets ?? 0) -
+            (availability?.purchasedCount ?? 0)}
+          /{event?.totalTickets} available{" "}
         </div>
 
-        {!isPastEvent && availability?.activeOffers > 0 && (
+        {!isPastEvent && (availability?.activeOffers ?? 0) > 0 && (
           <div className="w-full bg-yellow-200 text-pink-500 inline-flex items-center justify-start gap-1 font-body px-2 animate-pulse duration-700 py-1 font-bold rounded-lg">
             <ClockAlert className="w-4 h-4  text-pink-500" />
             {availability?.activeOffers}{" "}
@@ -244,7 +254,7 @@ function EventCard({
         {/* event description */}
 
         {clickable && (
-          <div className="line-clamp-3 font-body text-sm overflow-hidden text-ellipsis">
+          <div className="line-clamp-2 font-body text-sm overflow-hidden text-ellipsis">
             {event?.description}
           </div>
         )}

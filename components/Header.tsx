@@ -6,9 +6,9 @@ import SearchBar from "./SearchBar";
 
 function Header() {
   return (
-    <div className="border-b shadow-lg">
-      <div className="flex flex-col lg:flex-row items-center gap-4 p-4 bg-pink-300">
-        <div className="flex items-center justify-between w-full lg:w-auto">
+    <div className="border-b shadow-lg bg-pink-400">
+      <div className="flex flex-col lg:flex-row items-center gap-4 py-4 w-full container mx-auto">
+        <div className="flex items-center justify-between ">
           <Link href="/" className="font-bold shrink-0">
             <Image
               src={Logo}
