@@ -1,9 +1,8 @@
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { useUser } from "@clerk/nextjs";
+
 import { useMutation } from "convex/react";
 import { XCircle } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 function ReleaseTicket({
@@ -13,8 +12,6 @@ function ReleaseTicket({
   eventId: Id<"events">;
   waitingListId: Id<"waitingList">;
 }) {
-  const router = useRouter();
-  const { user } = useUser();
   const [isReleasing, setIsReleasing] = useState(false);
   const releaseTicket = useMutation(api.waitingList.releaseTicket);
 

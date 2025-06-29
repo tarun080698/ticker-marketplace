@@ -4,7 +4,6 @@ import { getConvexClient } from "@/lib/convex";
 import { api } from "@/convex/_generated/api";
 import Stripe from "stripe";
 import { StripeCheckoutMetaData } from "@/app/actions/createStripeCheckoutSession";
-import { metadata } from "../../../layout";
 
 export async function POST(req: Request) {
   const body = await req.text();
