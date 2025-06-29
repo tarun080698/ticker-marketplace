@@ -24,6 +24,7 @@ export async function getStripeConnectAccountStatus(
   try {
     const account = await stripe.accounts.retrieve(stripeAccountId);
 
+
     return {
       isActive:
         account.details_submitted &&

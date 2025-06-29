@@ -9,6 +9,7 @@ import {
   ArrowRight,
   Clock,
   AlertTriangle,
+  DollarSign,
 } from "lucide-react";
 import Link from "next/link";
 import Spinner from "./Spinner";
@@ -98,7 +99,7 @@ export default function TicketCard({ ticketId }: { ticketId: Id<"tickets"> }) {
         </div>
 
         <div className="mt-4 flex items-center justify-between text-sm">
-          <span
+          {/* <span
             className={`font-medium ${
               ticket.event.is_cancelled
                 ? "text-red-600"
@@ -107,8 +108,14 @@ export default function TicketCard({ ticketId }: { ticketId: Id<"tickets"> }) {
                   : "text-blue-600"
             }`}
           >
-            £{ticket.event.price.toFixed(2)}
-          </span>
+            ${ticket.event.price.toFixed(2)}
+          </span> */}
+          <div
+            className={`inline-flex items-center justify-center font-heading px-1 py-[2px] font-bold rounded-xl text-lg ${isPastEvent ? "bg-gray-100/70 text-gray-500" : " text-green-500"}`}
+          >
+            <DollarSign className="w-4 h-4 font-bold" />
+            {ticket?.event?.price.toFixed(2)}
+          </div>
           <span className="text-gray-600 flex items-center">
             View Ticket <ArrowRight className="w-4 h-4 ml-1" />
           </span>

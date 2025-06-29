@@ -56,9 +56,11 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
           {/* Left Column - Event Details */}
           <div className="space-y-4">
             <div className="flex items-center text-gray-600">
-              <CalendarDays
-                className={`w-5 h-5 mr-3 ${ticket.event.is_cancelled ? "text-red-600" : "text-blue-600"}`}
-              />
+              <div className="mr-3 w-7 h-7 bg-pink-100/20 rounded-full flex justify-center items-center">
+                <CalendarDays
+                  className={`w-5 h-5 ${ticket.event.is_cancelled ? "text-red-600" : "text-pink-600"}`}
+                />
+              </div>
               <div>
                 <p className="text-sm text-gray-500">Date</p>
                 <p className="font-medium">
@@ -68,9 +70,11 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
             </div>
 
             <div className="flex items-center text-gray-600">
-              <MapPin
-                className={`w-5 h-5 mr-3 ${ticket.event.is_cancelled ? "text-red-600" : "text-blue-600"}`}
-              />
+              <div className="mr-3 w-7 h-7 bg-pink-100/20 rounded-full flex justify-center items-center">
+                <MapPin
+                  className={`w-5 h-5 ${ticket.event.is_cancelled ? "text-red-600" : "text-pink-600"}`}
+                />
+              </div>
               <div>
                 <p className="text-sm text-gray-500">Location</p>
                 <p className="font-medium">{ticket.event.location}</p>
@@ -78,9 +82,11 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
             </div>
 
             <div className="flex items-center text-gray-600">
-              <User
-                className={`w-5 h-5 mr-3 ${ticket.event.is_cancelled ? "text-red-600" : "text-blue-600"}`}
-              />
+              <div className="mr-3 w-7 h-7 bg-pink-100/20 rounded-full flex justify-center items-center">
+                <User
+                  className={`w-5 h-5 ${ticket.event.is_cancelled ? "text-red-600" : "text-pink-600"}`}
+                />
+              </div>
               <div>
                 <p className="text-sm text-gray-500">Ticket Holder</p>
                 <p className="font-medium">{user.name}</p>
@@ -89,9 +95,11 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
             </div>
 
             <div className="flex items-center text-gray-600 break-all">
-              <IdCard
-                className={`w-5 h-5 mr-3 ${ticket.event.is_cancelled ? "text-red-600" : "text-blue-600"}`}
-              />
+              <div className="mr-3 w-7 h-7 bg-pink-100/20 rounded-full flex justify-center items-center">
+                <IdCard
+                  className={`w-5 h-5 ${ticket.event.is_cancelled ? "text-red-600" : "text-pink-600"}`}
+                />
+              </div>
               <div>
                 <p className="text-sm text-gray-500">Ticket Holder ID</p>
                 <p className="font-medium">{user.userId}</p>
@@ -99,12 +107,14 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
             </div>
 
             <div className="flex items-center text-gray-600">
-              <TicketIcon
-                className={`w-5 h-5 mr-3 ${ticket.event.is_cancelled ? "text-red-600" : "text-blue-600"}`}
-              />
+              <div className="mr-3 w-7 h-7 bg-pink-100/20 rounded-full flex justify-center items-center">
+                <TicketIcon
+                  className={`w-5 h-5 ${ticket.event.is_cancelled ? "text-red-600" : "text-pink-600"} `}
+                />
+              </div>
               <div>
                 <p className="text-sm text-gray-500">Ticket Price</p>
-                <p className="font-medium">£{ticket.event.price.toFixed(2)}</p>
+                <p className="font-medium">${ticket.event.price.toFixed(2)}</p>
               </div>
             </div>
           </div>
@@ -112,7 +122,7 @@ function Ticket({ ticketId }: { ticketId: Id<"tickets"> }) {
           {/* Right Column - QR Code */}
           <div className="flex flex-col items-center justify-center border-l border-gray-200 pl-6">
             <div
-              className={`bg-gray-100 p-4 rounded-lg ${ticket.event.is_cancelled ? "opacity-50" : ""}`}
+              className={`bg-gray-100 border-2 border-pink-600 animate-border-pulse p-4 rounded-lg ${ticket.event.is_cancelled ? "opacity-50" : ""}`}
             >
               <QRCode value={ticket._id} className="w-32 h-32" />
               {/* TODO: upon scanning this QR code, implement a rroute and a api which check whether this ticket is valid and exist in the tickets.*/}

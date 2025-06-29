@@ -265,6 +265,7 @@ function SellerDashboard() {
                             await createStripeConnectAccountLink(
                               stripeConnectId
                             );
+                          console.log("Account link URL:", url);
                           router.push(url);
                         } catch (error) {
                           console.error(

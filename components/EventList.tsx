@@ -8,7 +8,6 @@ import EventCard from "./EventCard";
 
 function EventList() {
   const events = useQuery(api.events.get);
-  // console.log({ events });
 
   if (!events) {
     return (
@@ -74,7 +73,7 @@ function EventList() {
             Thanks for your amazing contribution to such fun events
           </div>
         </div>
-        <div className="bg-pink-50 px-4 py-2 rounded-lg border border-blue-500">
+        <div className="px-4 py-2 rounded-lg border border-blue-500">
           <div className="flex items-center gap-2 text-blue-500">
             <CalendarDays className="w-5 h-5" />
             <span className="font-semibold">

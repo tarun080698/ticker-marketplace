@@ -35,9 +35,15 @@ export default {
             opacity: "0.3",
           },
         },
+
+        "border-pulse": {
+          "0%, 100%": { borderColor: "rgba(255, 0, 0, 0.1)" },
+          "50%": { borderColor: "rgba(255, 0, 0, 1)" },
+        },
       },
       animation: {
         pulseCycle: "pulseColorCycle 3s infinite",
+        "border-pulse": "border-pulse 2s ease-in-out infinite",
       },
 
       colors: {

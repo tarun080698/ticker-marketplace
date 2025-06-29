@@ -20,8 +20,6 @@ function EventPage() {
     eventId: params.id as Id<"events">,
   });
 
-  console.log({ user });
-
   const availability = useQuery(api.events.getEventAvailability, {
     eventId: params.id as Id<"events">,
   });
@@ -90,7 +88,7 @@ function EventPage() {
                       <Ticket className="w-5 h-5 mr-2 text-blue-500" />
                       <span className="text-sm font-medium">Price</span>
                     </div>
-                    <p className="text-gray-900">£{event.price.toFixed(2)}</p>
+                    <p className="text-gray-900">${event.price.toFixed(2)}</p>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
@@ -119,7 +117,7 @@ function EventPage() {
               </div>
 
               {/* Right Column - Ticket Purchase Card */}
-              <div>
+              <div className="">
                 <div className="sticky top-8 space-y-4">
                   <EventCard
                     eventId={params.id as Id<"events">}

@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 // import SellerEventList from "@/components/SellerEventList";
 import Link from "next/link";
 import { ArrowLeft, Plus } from "lucide-react";
+import SellerEventList from "@/components/SellerEventList";
 
 export default async function SellerEventsPage() {
   const { userId } = await auth();
@@ -40,7 +41,7 @@ export default async function SellerEventsPage() {
 
         {/* Event List */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          {/* <SellerEventList /> */}
+          <SellerEventList />
         </div>
       </div>
     </div>
