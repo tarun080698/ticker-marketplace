@@ -6,7 +6,9 @@ import { useSearchParams } from "next/navigation";
 import EventCard from "@/components/EventCard";
 import { Search } from "lucide-react";
 import Spinner from "@/components/Spinner";
-function SearchPage() {
+import { Suspense } from "react";
+
+function SearchPageInner() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
   const searchResults = useQuery(api.events.search, { searchTerm: query });
@@ -96,4 +98,16 @@ function SearchPage() {
   );
 }
 
-export default SearchPage;
+export default function SearchPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-[400px] flex items-center justify-center">
+          <Spinner />
+        </div>
+      }
+    >
+      <SearchPageInner />
+    </Suspense>
+  );
+}
