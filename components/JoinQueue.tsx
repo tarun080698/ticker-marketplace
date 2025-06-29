@@ -71,8 +71,8 @@ function JoinQueue({
       {(!queuePosition ||
         queuePosition.status === WAITING_LIST_STATUS.EXPIRED ||
         (queuePosition.status === WAITING_LIST_STATUS.OFFERED &&
-          queuePosition?.offerExpiresAt &
-            (queuePosition?.offerExpiresAt <= Date.now()))) && (
+          queuePosition?.offerExpiresAt !== undefined &&
+            queuePosition.offerExpiresAt <= Date.now())) && (
         <>
           {isEventOwner ? (
             <div className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-gray-100 text-gray-700 rounded-lg">
