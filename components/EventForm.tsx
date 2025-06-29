@@ -246,7 +246,7 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
             )}
           />
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-start md:items-center space-y-3 md:space-y-0 space-x-0 md:space-x-6 flex-col md:flex-row">
             <FormField
               control={form.control}
               name="eventDate"
@@ -256,6 +256,7 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
                   <FormControl>
                     <Input
                       type="date"
+                      className="w-80 max-w-full md:w-full"
                       {...field}
                       onChange={(e) => {
                         field.onChange(
@@ -288,10 +289,10 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
                         $
                       </span>
                       <Input
+                        className="pl-5 w-80 max-w-full md:w-full"
                         type="number"
                         {...field}
                         onChange={(e) => field.onChange(Number(e.target.value))}
-                        className="pl-6"
                       />
                     </div>
                   </FormControl>
@@ -310,8 +311,9 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      type="number"
                       {...field}
+                      type="number"
+                      className="w-80 max-w-full md:w-full"
                       onChange={(e) => field.onChange(Number(e.target.value))}
                     />
                   </FormControl>
@@ -323,12 +325,12 @@ export default function EventForm({ mode, initialData }: EventFormProps) {
 
           {/* Image Upload */}
           <div className="space-y-4">
-            <label className="block text-sm font-medium text-gray-700 font-semibold">
+            <label className="block text-sm text-gray-700 font-semibold">
               Event Image
             </label>
             <div className="mt-1 flex items-center gap-4">
               {imagePreview || (!removedCurrentImage && currentImageUrl) ? (
-                <div className="relative w-32 aspect-square bg-gray-100 rounded-lg">
+                <div className="relative min-w-32 aspect-video bg-gray-100 rounded-lg w-full">
                   <Image
                     src={imagePreview || currentImageUrl!}
                     alt="Preview"

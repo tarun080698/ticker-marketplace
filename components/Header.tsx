@@ -6,9 +6,9 @@ import SearchBar from "./SearchBar";
 
 function Header() {
   return (
-    <div className="border-b shadow-lg bg-pink-400">
+    <div className="border-b shadow-lg bg-pink-400 px-4">
       <div className="flex flex-col lg:flex-row items-center gap-4 py-4 w-full container mx-auto">
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between w-full lg:w-fit">
           <Link href="/" className="font-bold shrink-0">
             <Image
               src={Logo}
@@ -57,7 +57,7 @@ function Header() {
 
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="p-2 shadow-md bg-yellow-300 text-pink-300 font-semibold rounded-lg hover:bg-yellow-200">
+              <button className="p-2 shadow-md bg-yellow-300 text-pink-300 font-semibold rounded-lg hover:bg-yellow-200 whitespace-nowrap">
                 Sign In
               </button>
             </SignInButton>
