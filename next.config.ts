@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "uncommon-albatross-829.convex.cloud",
       },
+      {
+        protocol: "https",
+        hostname: "beloved-giraffe-389.convex.cloud",
+      },
     ],
   },
 };
