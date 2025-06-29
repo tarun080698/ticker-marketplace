@@ -1,5 +1,5 @@
 import { mutation, query } from "./_generated/server";
-import { ConvexError, v } from "convex/values";
+import { v } from "convex/values";
 
 export const getUserTickerForEvent = query({
   args: {

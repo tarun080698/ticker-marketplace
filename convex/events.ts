@@ -1,7 +1,7 @@
 import { mutation, query } from "./_generated/server";
-import { ConvexError, v } from "convex/values";
+import { v } from "convex/values";
 import { DURATIONS, TICKET_STATUS, WAITING_LIST_STATUS } from "./constants";
-import { components, internal } from "./_generated/api";
+import { internal } from "./_generated/api";
 import { processQueue } from "./waitingList";
 // import { MINUTE, RateLimiter } from "@convex-dev/rate-limiter";
 
